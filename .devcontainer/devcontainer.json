@@ -1,7 +1,19 @@
 {
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/nix:1": {}
+    "ghcr.io/devcontainers/features/nix:1": {
+      "flakes": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh"
+  "remoteEnv": {
+    "EDITOR": "nvim",
+    "TERM": "xterm-256color"
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "mounts": [
+  "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+  "source=${localEnv:HOME}/.ssh,target=/home/devcontainer/.ssh,type=bind"
+  ],
+  "remoteUser": "devcontainer"
 }
