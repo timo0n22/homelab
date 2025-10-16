@@ -15,8 +15,6 @@ nix-env -iA nixpkgs.fzf \
              nixpkgs.lazygit \
              nixpkgs.go \
              nixpkgs.gopls \
-             nixpkgs.yaml-language-server \
-             nixpkgs.marksman
 
 mkdir -p /tmp/.ssh
 cp -r ~/.ssh/* /tmp/.ssh/ 2>/dev/null || true
