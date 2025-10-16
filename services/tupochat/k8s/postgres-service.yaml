@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tupochat-postgres
+  namespace: tupochat
+  labels:
+    app: tupochat
+    component: database
+spec:
+  type: ClusterIP
+  selector:
+    app: tupochat
+    component: database
+  ports:
+  - name: postgres
+    port: 5432
+    targetPort: 5432
+    protocol: TCP

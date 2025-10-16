@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tupochat-config
+  namespace: tupochat
+  labels:
+    app: tupochat
+data:
+  SERVER_PORT: "5522"
+  DB_HOST: "tupochat-postgres"
+  DB_PORT: "5432"
+  DB_NAME: "tupochatdb"
+  DB_USER: "postgres"
